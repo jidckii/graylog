@@ -2,6 +2,8 @@
 
 [EN](https://github.com/jidckii/graylog/blob/master/README.md)
 
+[![dockeri.co](https://dockeri.co/image/jidckii/graylog)](https://hub.docker.com/r/jidckii/graylog)
+
 Включает плагин для [SSO](https://github.com/Graylog2/graylog-plugin-auth-sso), [alertmanager](https://github.com/GDATASoftwareAG/Graylog-Plugin-AlertManager-Callback) и [metrics](https://github.com/graylog-labs/graylog-plugin-metrics-reporter)  в формате prometheus.
 
 Сборка:

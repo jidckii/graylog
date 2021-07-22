@@ -2,6 +2,8 @@
 
 [RU](https://github.com/jidckii/graylog/blob/master/README_RU.md)
 
+[![dockeri.co](https://dockeri.co/image/jidckii/graylog)](https://hub.docker.com/r/jidckii/graylog)
+
 Includes plugin for [SSO](https://github.com/Graylog2/graylog-plugin-auth-sso), [alertmanager](https://github.com/GDATASoftwareAG/Graylog-Plugin-AlertManager-Callback) and [metrics](https://github.com/graylog-labs/graylog-plugin-metrics-reporter) in prometheus format.
 
 Assembly:
