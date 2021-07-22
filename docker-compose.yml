@@ -5,8 +5,6 @@ services:
     image: mongo:4.2
     networks:
       - graylog
-    volumes:
-      - ./mongo:/data/db
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.10.2
@@ -14,7 +12,7 @@ services:
       - http.host=0.0.0.0
       - transport.host=localhost
       - network.host=0.0.0.0
-      - "ES_JAVA_OPTS=-Xms512m -Xmx1024m"
+      - ES_JAVA_OPTS="-Xms512m -Xmx1024m"
     ulimits:
       memlock:
         soft: -1
@@ -27,14 +25,16 @@ services:
       - graylog
 
   graylog:
-    image: graylog/graylog:4.1
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       # CHANGE ME (must be at least 16 characters)!
       - GRAYLOG_PASSWORD_SECRET=somepasswordpepper
       # Password: admin
-      - GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
+      - GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918 # admin
       - GRAYLOG_HTTP_EXTERNAL_URI=http://127.0.0.1:9000/
-      - "ES_JAVA_OPTS=-Xms512m -Xmx1024m"
+      - ES_JAVA_OPTS="-Xms512m -Xmx1024m"
     networks:
       - graylog
     depends_on:
