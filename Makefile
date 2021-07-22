@@ -18,7 +18,7 @@ build:
 .PHONY: push
 push: build
 push:
-	@docker push registry.gitlab.com/sdelka-rf/docker/graylog:${VERSION}
+	@docker push jidckii/graylog:${VERSION}
 
 .PHONY: test
 test: build
