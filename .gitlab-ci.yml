@@ -1,0 +1,17 @@
+stages:
+  - build
+
+# Build docker image
+Build images:
+  image: docker:stable
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - apk --update --no-cache add make
+    - echo ${CI_JOB_TOKEN} | docker login -u gitlab-ci-token --password-stdin ${CI_REGISTRY}
+  script:
+    - make push
+  after_script:
+    - docker logout registry.gitlab.com
+    - docker logout
