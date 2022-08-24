@@ -4,7 +4,7 @@
 
 [![dockeri.co](https://dockeri.co/image/jidckii/graylog)](https://hub.docker.com/r/jidckii/graylog)
 
-Includes plugin for [SSO](https://github.com/Graylog2/graylog-plugin-auth-sso), [alertmanager](https://github.com/GDATASoftwareAG/Graylog-Plugin-AlertManager-Callback) and [metrics](https://github.com/graylog-labs/graylog-plugin-metrics-reporter) in prometheus format.
+Includes plugin for [SSO](https://github.com/Graylog2/graylog-plugin-auth-sso) and [alertmanager](https://github.com/GDATASoftwareAG/Graylog-Plugin-AlertManager-Callback).
 
 Assembly:
 
@@ -21,10 +21,9 @@ make push
 You can update the versions in the Makefile:
 
 ```bash
-VERSION := 4.1.1-1
-VERSION_SSO := 3.2.1
+VERSION := 4.2.12-1
+VERSION_SSO := 3.3.0
 VERSION_ALERTMANAGER := 1.2.2
-VERSION_METRICS := 3.0.0
 ```
 
 **Before pushing a new version, check locally:**
